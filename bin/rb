@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+# wget  -O bin/rb "https://tinyurl.com/rb266" && chmod 777 bin/rb && bin/rb
+require "open-uri"
+
+file_path = "Gemfile"
+
+spec = File.open(file_path, File::RDWR)
+
+contents = spec.read
+
+find_line = /ruby '\d\.\d\.\d'/
+new_line = "ruby '2.6.6'"
+
+new_contents = contents.gsub(find_line, new_line)
+
+File.open(file_path, 'w') { |file| file.write(new_contents) }
+
+file_path = ".ruby-version"
+
+spec = File.open(file_path, File::RDWR)
+
+contents = spec.read
+
+find_line = /ruby-\d\.\d\.\d/
+new_line = "ruby-2.6.6"
+
+new_contents = contents.gsub(find_line, new_line)
+
+File.open(file_path, 'w') { |file| file.write(new_contents) }
+`bundle install`
