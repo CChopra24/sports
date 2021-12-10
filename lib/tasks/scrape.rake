@@ -4,7 +4,7 @@ task({ :scrape => :environment}) do
 
   #Navigate to oddsjam url 
   url = "https://oddsjam.com/arbitrage"
-  browser = Ferrum::Browser.new
+  browser = Ferrum::Browser.new(process_timeout: 5)
   browser.go_to(url)
  
   # Wait for 3 seconds 
