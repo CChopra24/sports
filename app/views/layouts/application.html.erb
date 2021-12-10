@@ -26,12 +26,9 @@
         </li>
       <% else %>
         <li>
-          <a href="/bookmarks"><%= @current_user.first_name %>'s bookmarks</a>
-        </li>
-        <li>
           <a href="/user_sign_out">Sign out</a>
         </li>
-        <h3>Welcome <%= @current_user.first_name %> Your account balance is <%= @current_user.account_balance %></h3>
+        <h3>Welcome, <%= @current_user.first_name %>! Your account balance is $<%= @current_user.account_balance %>.</h3>
       <% end %>
     </ul>
 
