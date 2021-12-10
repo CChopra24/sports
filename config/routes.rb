@@ -27,6 +27,7 @@ Rails.application.routes.draw do
              
   #------------------------------
 
+  #HOMEPAGE - RECORD OF ARBITRAGE OPPORTUNITES 
   get("/", { :controller => "betting", :action => "index" })
 
 end

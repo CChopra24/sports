@@ -1,49 +1,78 @@
+<h1>List of Arbitrage opportunities</h1>
+
 <hr>
-<div>
-  <div>
-    <table>
-      <tr>
-        <th>
-          ID                
-        </th>
 
-        <th>
-          Event
-        </th>
+<table border="1">
+  <tr>
+    <th>
+      Event
+    </th>
 
-        <th>
-          Market
-        </th>
+    <th>
+      Market
+    </th>
 
-        <th>
-          Odds1
-        </th>
+    <th>
+      Date
+    </th>
 
-        <th>
-          Books1
-        </th>
+    <th>
+      Books1
+    </th>
 
-        <th>
-          Odds2
-        </th>
+    <th>
+      Odds1
+    </th>
 
-        <th>
-          Books2
-        </th>
+    <th>
+      Books2
+    </th>
 
-        <th>
-          Created at
-        </th>
+    <th>
+      Odds2
+    </th>
 
-        <th>
-          Return 
-        </th>
+    <th>
+      Return
+    </th>
 
-        <th>
-        </th>
-      </tr>
-        
-      
-    </table>
-  </div>
-</div>
+    <th></th>
+  </tr>
+
+  <% @bets.each do |a_bet| %>
+  <tr>
+    <td>
+      <%= a_bet.event %>
+    </td>
+
+    <td>
+      <%= a_bet.market %>
+    </td>
+
+    <td>
+      <%= a_bet.date %>
+    </td>
+
+    <td>
+      <%= a_bet.books1 %>
+    </td>
+
+    <td>
+      <%= a_bet.odds1 %>
+    </td>
+
+    <td>
+      <%= a_bet.books2 %>
+    </td>
+
+    <td>
+      <%= a_bet.odds2 %>
+    </td>
+
+    <td>
+      <%= a_bet.return %>
+    </td>
+  </tr>
+  
+  <% end %>
+</table>
