@@ -61,4 +61,8 @@ task({ :scrape => :environment}) do
   bet.save
   p bet 
 
+  User.all.each do |user|
+    user.account_balance = user.account_balance * (1 + (bet.return * 0.5)) 
+    user.save
+  end 
 end
