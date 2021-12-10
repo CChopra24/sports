@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_08_173239) do
+ActiveRecord::Schema.define(version: 2021_12_10_170514) do
+
+  create_table "bets", force: :cascade do |t|
+    t.string "date"
+    t.string "event"
+    t.string "market"
+    t.integer "odds1"
+    t.integer "odds2"
+    t.decimal "return"
+    t.string "books1"
+    t.string "books2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
+    t.integer "account_balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
